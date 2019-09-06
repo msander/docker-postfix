@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:latest
 MAINTAINER Bojan Cekrlic - https://github.com/bokysan/docker-postfix/
 
 # See README.md for details
@@ -29,7 +29,8 @@ COPY       run.sh /run.sh
 RUN        chmod +x /run.sh
 
 # Set up spool volume
-VOLUME     [ "/var/spool/postfix", "/etc/postfix" ]
+# VOLUME     [ "/var/spool/postfix", "/etc/postfix" ]
+VOLUME     [ "/var/spool/postfix" ]
 
 # Run supervisord
 USER       root
